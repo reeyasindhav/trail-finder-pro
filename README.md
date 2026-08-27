@@ -1,14 +1,28 @@
-# Welcome to your Lovable project
+# Trail Finder Pro
+
+Trailblaze- Hiking & Trail Discovery Platform
+
+Please create a full UI UX design for this website. Make sure to have design-focused pages make sure to use and iterate on the given images to create ui, the final site should be production ready with functional implementation. It should include minimum of 8 to 10 pages, including login/singup pages and authenticated pages like the dashboard. The focus should be on design while maintaining all mockup data. add animations to the site and please give a simple user flow in the response
+
+please do not generate images in here use open source images where needed.
+
+Design Ideas: Rugged outdoor aesthetic, trail map integration, difficulty badge system, elevation chart UI, gear checklists feature. 
+
+Problem Statement:
+
+Outdoor enthusiasts and hikers often struggle to find accurate, centralised information when planning their trips. Key details-such as trail difficulty, terrain elevation, required gear, and recent community reviews-are typically scattered across multiple disconnected websites or outdated forums. This lack of clear, consolidated information makes trip planning inefficient and can lead to safety risks when hikers choose trails that do not match their physical fitness or gear preparation. Trailblaze addresses this by providing a unified digital platform that allows hikers to easily discover routes, evaluate accurate difficulty levels, review interactive elevation and map data, and prepare properly using integrated gear checklists.
+
+Ask me if you have any questions.
 
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/30ec60ae-af7e-4515-ba6a-7254481e343c).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +34,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
