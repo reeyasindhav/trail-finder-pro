@@ -1,4 +1,12 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+  type ReactNode,
+} from "react";
 
 export type User = { name: string; email: string; initials: string };
 
@@ -34,7 +42,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const raw = window.localStorage.getItem(KEY);
       if (raw) setUser(JSON.parse(raw) as User);
       const rawSaved = window.localStorage.getItem(SAVED_KEY);
-      setSaved(rawSaved ? (JSON.parse(rawSaved) as string[]) : ["raven-rock-loop", "larch-basin-circuit"]);
+      setSaved(
+        rawSaved
+          ? (JSON.parse(rawSaved) as string[])
+          : ["raven-rock-loop", "larch-basin-circuit", "hemlock-lakes-loop"],
+      );
     } catch {
       /* ignore */
     }

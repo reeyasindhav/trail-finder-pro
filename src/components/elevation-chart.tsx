@@ -12,6 +12,7 @@ import type { Trail } from "@/lib/trails";
 export function ElevationChart({ trail, height = 260 }: { trail: Trail; height?: number }) {
   const max = Math.max(...trail.elevation.map((p) => p.ft));
   const min = Math.min(...trail.elevation.map((p) => p.ft));
+  const gradientId = `elevFill-${trail.slug.replace(/[^a-z0-9]/g, "-")}`;
 
   return (
     <div className="rounded-2xl border border-border bg-card p-5">
@@ -24,7 +25,7 @@ export function ElevationChart({ trail, height = 260 }: { trail: Trail; height?:
         </div>
         <div className="flex gap-5">
           <Stat label="Gain" value={`${trail.elevationFt.toLocaleString()} ft`} />
-          <Stat label="Max grade" value={`${8 + trail.elevation.length % 5}%`} />
+          <Stat label="Max grade" value={`${8 + (trail.elevation.length % 5)}%`} />
           <Stat label="Distance" value={`${trail.distanceMi} mi`} />
         </div>
       </div>
@@ -32,7 +33,7 @@ export function ElevationChart({ trail, height = 260 }: { trail: Trail; height?:
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={trail.elevation} margin={{ top: 6, right: 6, left: -12, bottom: 0 }}>
             <defs>
-              <linearGradient id="elevFill" x1="0" y1="0" x2="0" y2="1">
+              <linearGradient id={gradientId} x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stopColor="var(--moss)" stopOpacity={0.55} />
                 <stop offset="100%" stopColor="var(--moss)" stopOpacity={0.04} />
               </linearGradient>
@@ -66,7 +67,7 @@ export function ElevationChart({ trail, height = 260 }: { trail: Trail; height?:
               dataKey="ft"
               stroke="var(--forest)"
               strokeWidth={2.5}
-              fill="url(#elevFill)"
+              fill={`url(#${gradientId})`}
               animationDuration={1400}
             />
           </AreaChart>

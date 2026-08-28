@@ -11,6 +11,9 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { AuthProvider } from "../lib/auth";
+import { SiteHeader } from "@/components/site-header";
+import { Footer } from "@/components/footer";
 
 function NotFoundComponent() {
   return (
@@ -33,6 +36,7 @@ function NotFoundComponent() {
     </div>
   );
 }
+
 
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
@@ -77,14 +81,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Trailblaze — Hiking & Trail Discovery" },
+      {
+        name: "description",
+        content:
+          "Discover trails, check elevation profiles, and pack the right gear with Trailblaze.",
+      },
+      { name: "author", content: "Trailblaze" },
+      { property: "og:title", content: "Trailblaze — Hiking & Trail Discovery" },
+      {
+        property: "og:description",
+        content:
+          "Discover trails, check elevation profiles, and pack the right gear with Trailblaze.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:site", content: "@Trailblaze" },
     ],
     links: [
       {
@@ -116,11 +128,22 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const router = useRouter();
+  const pathname = router.state.location.pathname;
+
+  const hideLayout = ["/login", "/signup"].includes(pathname);
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <AuthProvider>
+        <div className="flex min-h-screen flex-col">
+          {!hideLayout && <SiteHeader />}
+          <main className="flex-1">
+            <Outlet />
+          </main>
+          {!hideLayout && <Footer />}
+        </div>
+      </AuthProvider>
     </QueryClientProvider>
   );
 }

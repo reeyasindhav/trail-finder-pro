@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 export function TrailMap({ trail, className }: { trail: Trail; className?: string }) {
   const [active, setActive] = useState<number | null>(null);
   const [draw, setDraw] = useState(false);
+  const gradientId = `tmg-${trail.slug.replace(/[^a-z0-9]/g, "-")}`;
 
   useEffect(() => {
     const t = setTimeout(() => setDraw(true), 120);
@@ -23,19 +24,21 @@ export function TrailMap({ trail, className }: { trail: Trail; className?: strin
 
   return (
     <div
-      className={cn(
-        "relative overflow-hidden rounded-2xl border border-border bg-sand",
-        className,
-      )}
+      className={cn("relative overflow-hidden rounded-2xl border border-border bg-sand", className)}
     >
-      <svg viewBox="0 0 560 360" className="h-full w-full" role="img" aria-label={`Route map for ${trail.name}`}>
+      <svg
+        viewBox="0 0 560 360"
+        className="h-full w-full"
+        role="img"
+        aria-label={`Route map for ${trail.name}`}
+      >
         <defs>
-          <linearGradient id="tmg" x1="0" y1="0" x2="1" y2="1">
+          <linearGradient id={gradientId} x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stopColor="var(--sand)" />
             <stop offset="100%" stopColor="var(--sand-deep)" />
           </linearGradient>
         </defs>
-        <rect width="560" height="360" fill="url(#tmg)" />
+        <rect width="560" height="360" fill={`url(#${gradientId})`} />
         {Array.from({ length: 11 }).map((_, i) => (
           <ellipse
             key={i}

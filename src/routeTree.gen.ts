@@ -10,33 +10,206 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as CommunityRouteImport } from './routes/community'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as DiscoverRouteImport } from './routes/discover'
+import { Route as GearRouteImport } from './routes/gear'
+import { Route as LeaveNoTraceRouteImport } from './routes/leave-no-trace'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as SafetyGuideRouteImport } from './routes/safety-guide'
+import { Route as SavedRouteImport } from './routes/saved'
+import { Route as SignupRouteImport } from './routes/signup'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as TrailsSlugRouteImport } from './routes/trails/$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommunityRoute = CommunityRouteImport.update({
+  id: '/community',
+  path: '/community',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiscoverRoute = DiscoverRouteImport.update({
+  id: '/discover',
+  path: '/discover',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GearRoute = GearRouteImport.update({
+  id: '/gear',
+  path: '/gear',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeaveNoTraceRoute = LeaveNoTraceRouteImport.update({
+  id: '/leave-no-trace',
+  path: '/leave-no-trace',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SafetyGuideRoute = SafetyGuideRouteImport.update({
+  id: '/safety-guide',
+  path: '/safety-guide',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SavedRoute = SavedRouteImport.update({
+  id: '/saved',
+  path: '/saved',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TrailsSlugRoute = TrailsSlugRouteImport.update({
+  id: '/trails/$slug',
+  path: '/trails/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/community': typeof CommunityRoute
+  '/dashboard': typeof DashboardRoute
+  '/discover': typeof DiscoverRoute
+  '/gear': typeof GearRoute
+  '/leave-no-trace': typeof LeaveNoTraceRoute
+  '/login': typeof LoginRoute
+  '/privacy': typeof PrivacyRoute
+  '/safety-guide': typeof SafetyGuideRoute
+  '/saved': typeof SavedRoute
+  '/signup': typeof SignupRoute
+  '/terms': typeof TermsRoute
+  '/trails/$slug': typeof TrailsSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/community': typeof CommunityRoute
+  '/dashboard': typeof DashboardRoute
+  '/discover': typeof DiscoverRoute
+  '/gear': typeof GearRoute
+  '/leave-no-trace': typeof LeaveNoTraceRoute
+  '/login': typeof LoginRoute
+  '/privacy': typeof PrivacyRoute
+  '/safety-guide': typeof SafetyGuideRoute
+  '/saved': typeof SavedRoute
+  '/signup': typeof SignupRoute
+  '/terms': typeof TermsRoute
+  '/trails/$slug': typeof TrailsSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/community': typeof CommunityRoute
+  '/dashboard': typeof DashboardRoute
+  '/discover': typeof DiscoverRoute
+  '/gear': typeof GearRoute
+  '/leave-no-trace': typeof LeaveNoTraceRoute
+  '/login': typeof LoginRoute
+  '/privacy': typeof PrivacyRoute
+  '/safety-guide': typeof SafetyGuideRoute
+  '/saved': typeof SavedRoute
+  '/signup': typeof SignupRoute
+  '/terms': typeof TermsRoute
+  '/trails/$slug': typeof TrailsSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/community'
+    | '/dashboard'
+    | '/discover'
+    | '/gear'
+    | '/leave-no-trace'
+    | '/login'
+    | '/privacy'
+    | '/safety-guide'
+    | '/saved'
+    | '/signup'
+    | '/terms'
+    | '/trails/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/community'
+    | '/dashboard'
+    | '/discover'
+    | '/gear'
+    | '/leave-no-trace'
+    | '/login'
+    | '/privacy'
+    | '/safety-guide'
+    | '/saved'
+    | '/signup'
+    | '/terms'
+    | '/trails/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/community'
+    | '/dashboard'
+    | '/discover'
+    | '/gear'
+    | '/leave-no-trace'
+    | '/login'
+    | '/privacy'
+    | '/safety-guide'
+    | '/saved'
+    | '/signup'
+    | '/terms'
+    | '/trails/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  CommunityRoute: typeof CommunityRoute
+  DashboardRoute: typeof DashboardRoute
+  DiscoverRoute: typeof DiscoverRoute
+  GearRoute: typeof GearRoute
+  LeaveNoTraceRoute: typeof LeaveNoTraceRoute
+  LoginRoute: typeof LoginRoute
+  PrivacyRoute: typeof PrivacyRoute
+  SafetyGuideRoute: typeof SafetyGuideRoute
+  SavedRoute: typeof SavedRoute
+  SignupRoute: typeof SignupRoute
+  TermsRoute: typeof TermsRoute
+  TrailsSlugRoute: typeof TrailsSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +221,115 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/community': {
+      id: '/community'
+      path: '/community'
+      fullPath: '/community'
+      preLoaderRoute: typeof CommunityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/discover': {
+      id: '/discover'
+      path: '/discover'
+      fullPath: '/discover'
+      preLoaderRoute: typeof DiscoverRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gear': {
+      id: '/gear'
+      path: '/gear'
+      fullPath: '/gear'
+      preLoaderRoute: typeof GearRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leave-no-trace': {
+      id: '/leave-no-trace'
+      path: '/leave-no-trace'
+      fullPath: '/leave-no-trace'
+      preLoaderRoute: typeof LeaveNoTraceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/safety-guide': {
+      id: '/safety-guide'
+      path: '/safety-guide'
+      fullPath: '/safety-guide'
+      preLoaderRoute: typeof SafetyGuideRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/saved': {
+      id: '/saved'
+      path: '/saved'
+      fullPath: '/saved'
+      preLoaderRoute: typeof SavedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trails/$slug': {
+      id: '/trails/$slug'
+      path: '/trails/$slug'
+      fullPath: '/trails/$slug'
+      preLoaderRoute: typeof TrailsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  CommunityRoute: CommunityRoute,
+  DashboardRoute: DashboardRoute,
+  DiscoverRoute: DiscoverRoute,
+  GearRoute: GearRoute,
+  LeaveNoTraceRoute: LeaveNoTraceRoute,
+  LoginRoute: LoginRoute,
+  PrivacyRoute: PrivacyRoute,
+  SafetyGuideRoute: SafetyGuideRoute,
+  SavedRoute: SavedRoute,
+  SignupRoute: SignupRoute,
+  TermsRoute: TermsRoute,
+  TrailsSlugRoute: TrailsSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
